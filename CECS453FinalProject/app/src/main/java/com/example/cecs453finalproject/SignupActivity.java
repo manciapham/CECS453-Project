@@ -4,17 +4,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 /**
- *  SIGN IN PAGE
- *  - Logo/App name
+ *  SIGN UP PAGE
  *  - username field
  *  - password field
- *  - login button
+ *  - password check field
+ *  - email field
+ *  - submit button
  */
-public class MainActivity extends AppCompatActivity {
+public class SignupActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_signup);
     }
 }
