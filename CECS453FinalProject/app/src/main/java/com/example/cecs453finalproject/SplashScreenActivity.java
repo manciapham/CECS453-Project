@@ -3,27 +3,41 @@ package com.example.cecs453finalproject;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 
 public class SplashScreenActivity extends AppCompatActivity {
+
+    private ProgressBar mProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        Thread myThread = new Thread(){
-            @Override
-            public void run(){
-                try {
-                    sleep(3000);
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(intent);
+        mProgress = (ProgressBar) findViewById(R.id.pb_splashscreen);
+
+        new Thread(new Runnable(){
+                public void run(){
+                    doWork();
+                    startApp();
                     finish();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
+            }).start();
+    }
+
+    private void doWork(){
+        for (int progress = 0; progress < 100; progress += 20){
+            try{
+                Thread.sleep(500);
+                mProgress.setProgress(progress);
+            }catch(Exception e){
+                e.printStackTrace();
             }
-        };
-        myThread.start();
+        }
+    }
+
+    private void startApp(){
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(intent);
     }
 }
