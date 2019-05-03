@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView status;
     private Button login;
     private Button signup;
-    private int count = 3;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
