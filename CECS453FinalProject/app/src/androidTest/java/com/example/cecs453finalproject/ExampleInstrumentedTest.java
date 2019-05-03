@@ -1,4 +1,4 @@
-package com.example.cecs453finalproject;
+package com.example.CECS;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
