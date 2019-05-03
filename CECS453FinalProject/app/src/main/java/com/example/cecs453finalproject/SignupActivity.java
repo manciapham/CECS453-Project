@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 /**
  *  SIGN UP PAGE
@@ -17,6 +16,7 @@ import android.widget.Toast;
  *  - submit button
  *  - cancel button
  */
+
 public class SignupActivity extends AppCompatActivity {
 
     private EditText username;
@@ -25,6 +25,7 @@ public class SignupActivity extends AppCompatActivity {
     private EditText email;
     private Button submit;
     private Button cancel;
+
 
     //TODO: ADD CODE FOR DATABASE CONNECTIVITY
 
@@ -60,6 +61,6 @@ public class SignupActivity extends AppCompatActivity {
 
     private void validation(String user, String pass, String rePass,
                             String mail){
-        //TODO: ADD CODE FOR DATABASE VALIDATION
+
     }
 }

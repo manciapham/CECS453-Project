@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  *  SIGN IN PAGE
@@ -54,6 +53,5 @@ public class MainActivity extends AppCompatActivity {
     private void validation(String user, String pass)
     {
         //TODO: DATABASE CONNECTIVITY CODE
-
     }
 }
