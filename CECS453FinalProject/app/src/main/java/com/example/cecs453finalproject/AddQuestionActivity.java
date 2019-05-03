@@ -5,12 +5,13 @@ import android.os.Bundle;
 
 /**
  *  Activity for adding a question
- *  - username field
- *  - password field
- *  - password check field
- *  - email field
+ *  - settings
+ *  - greeting
+ *  - title
+ *  - question textbox
+ *  - answer choice boxes
+ *  - checkbox for correct answer
  *  - submit button
- *  - cancel button
  */
 public class AddQuestionActivity extends AppCompatActivity {
 
