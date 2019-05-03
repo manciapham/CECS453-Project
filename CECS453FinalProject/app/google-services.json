@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "232453713889",
+    "firebase_url": "https://cecs453.firebaseio.com",
+    "project_id": "cecs453",
+    "storage_bucket": "cecs453.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232453713889:android:70794758ae65e924",
+        "android_client_info": {
+          "package_name": "com.example.cecs453finalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232453713889-1iu34gngcu630d7o8n8uqds60glabjpk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-ML7SOwG5Zge2LtfbzN8Avprw6QEJnMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232453713889-1iu34gngcu630d7o8n8uqds60glabjpk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
