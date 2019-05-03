@@ -5,6 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 
+/**
+ *  Splash Screen
+ *  - app logo
+ *  - app name
+ *  - progress bar
+ *  Shows logo and app name and loads for 3 seconds
+ */
 public class SplashScreenActivity extends AppCompatActivity {
 
     private ProgressBar mProgress;

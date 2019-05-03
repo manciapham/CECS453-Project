@@ -3,6 +3,15 @@ package com.example.cecs453finalproject;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+/**
+ *  Activity for adding a question
+ *  - username field
+ *  - password field
+ *  - password check field
+ *  - email field
+ *  - submit button
+ *  - cancel button
+ */
 public class AddQuestionActivity extends AppCompatActivity {
 
     @Override
