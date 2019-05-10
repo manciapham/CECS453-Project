@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Brain Games</string>
+
+    <string name="incorrect">incorrect username or password</string>
+
     <string name="sign_up">Sign Up</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
@@ -26,8 +29,9 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="save">save</string>
+    <string name="retype_password">retype_password</string>
 
-    <string name="save">Save</string>
-    <string name="retype_password">Retype Password</string>
-    <string name="edit_account">Edit Account</string>
+
+    <string name ="edit_account">Edit Account</string>
 </resources>
