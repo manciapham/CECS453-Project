@@ -14,9 +14,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -120,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 return null;
-
             }
 
             protected void onPreExecute() {
@@ -132,13 +128,12 @@ public class MainActivity extends AppCompatActivity {
         getJSON.execute();
     }
 
-
     private void validation(final String user, final String pass) {
         //TODO: DATABASE CONNECTIVITY CODE
         boolean check = false;
         for (int i = 0; i < uN.size(); i++) {
-            System.out.println("username" + uN.get(i));
-            System.out.println("password" + uP.get(i));
+            System.out.println("Username" + uN.get(i));
+            System.out.println("Password" + uP.get(i));
             if ((uN.get(i).equals(user)) && (uP.get(i).equals(pass))) {
                 check = true;
             }
@@ -147,9 +142,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
             startActivity(intent);
         } else {
-            //Toast.makeText(getString(R.string.incorrect));
+            Toast.makeText(MainActivity.this,
+                    "Username or Password is Incorrect", Toast.LENGTH_SHORT).show();
         }
-
-
     }
 }
