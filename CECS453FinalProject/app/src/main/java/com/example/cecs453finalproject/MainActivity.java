@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         //reading user credentials from the text fields
 
         username = (EditText) findViewById(R.id.et_username);
