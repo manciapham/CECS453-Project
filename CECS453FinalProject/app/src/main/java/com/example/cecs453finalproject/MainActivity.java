@@ -52,9 +52,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> uN = new ArrayList<>();
     ArrayList<String> uP = new ArrayList<>();
 
-
     private int count = 3;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void downloadJSON(final String urlWebService) {
         class DownloadJSON extends AsyncTask<Void, Void, String> {
@@ -128,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void validation(final String user, final String pass) {
-        //TODO: DATABASE CONNECTIVITY CODE
         boolean check = false;
         for (int i = 0; i < uN.size(); i++) {
             System.out.println("Username" + uN.get(i));
@@ -137,12 +133,15 @@ public class MainActivity extends AppCompatActivity {
                 check = true;
             }
         }
+
         if (check == true) {
             Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
             startActivity(intent);
+            Toast.makeText(MainActivity.this,
+                    "WELCOME QUIZTAKER!", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(MainActivity.this,
-                    "Username or Password is Incorrect", Toast.LENGTH_SHORT).show();
+                    "INCORRECT USERNAME OR PASSWORD", Toast.LENGTH_SHORT).show();
         }
     }
 }
