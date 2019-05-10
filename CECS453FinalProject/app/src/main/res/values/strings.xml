@@ -14,4 +14,5 @@
     <string name="logout">logout</string>
     <string name="settings">settings</string>
     <string name="about_us">about us</string>
+    <string name="edit">edit</string>
 </resources>
