@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="stateHidden">
-        <activity android:name=".ChangeCredentialActivity"></activity>
+        <activity
+            android:name=".NavigationDrawerActivity"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ChangeCredentialActivity" />
         <activity android:name=".AdminHomeActivity" />
         <activity android:name=".AddQuestionActivity" />
         <activity android:name=".MainActivity" />
