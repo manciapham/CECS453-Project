@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
     private Button login;
     private Button signup;
 
+    private Button testButton;
+
     boolean check = false;
     int index;
     private static final String TAG = "MainActivity";
@@ -68,7 +70,17 @@ public class MainActivity extends AppCompatActivity {
         login = (Button) findViewById(R.id.b_login);
         signup = (Button) findViewById(R.id.b_signup);
 
+        testButton = (Button) findViewById(R.id.b_test);
+
         downloadJSON("https://nisalgamage.com/userNpass");
+
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddQuestionActivity.class);
+                startActivity(intent);
+            }
+        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
