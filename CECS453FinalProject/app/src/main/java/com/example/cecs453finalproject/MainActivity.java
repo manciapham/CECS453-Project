@@ -1,10 +1,7 @@
 package com.example.cecs453finalproject;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.AsyncTask;
-import android.os.NetworkOnMainThreadException;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
