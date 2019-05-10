@@ -78,11 +78,11 @@ public class UserHomeActivity extends AppCompatActivity implements NavigationVie
         int id = item.getItemId();
 
         if (id == R.id.nav_account) {
-            // Handle the camera action
+            //TODO:
         } else if (id == R.id.nav_about) {
-
+            //TODO:
         } else if (id == R.id.nav_logout) {
-
+            //TODO:
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
