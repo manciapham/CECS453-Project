@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Brain Games</string>
+    <string name="incorrect">incorrect username or password</string>
 </resources>
