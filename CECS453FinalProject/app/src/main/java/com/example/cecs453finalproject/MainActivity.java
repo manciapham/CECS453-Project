@@ -15,6 +15,7 @@ import android.widget.TextView;
  *  - password field
  *  - login button
  */
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText username;
@@ -28,8 +29,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //reading user credentials from the text fields
         username = (EditText)findViewById(R.id.et_username);
         password = (EditText)findViewById(R.id.et_password);
+
+        //buttons link to an action
         login = (Button)findViewById(R.id.b_login);
         signup = (Button)findViewById(R.id.b_signup);
 
@@ -50,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //validates the user credentials in the database
     private void validation(String user, String pass)
     {
         //TODO: DATABASE CONNECTIVITY CODE

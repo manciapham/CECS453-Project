@@ -32,13 +32,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="@string/username"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.432" />
+        app:layout_constraintVertical_bias="0.432"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/et_password"
@@ -49,13 +50,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_username"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/b_login"
@@ -65,7 +67,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Login"
+        android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -81,7 +83,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
