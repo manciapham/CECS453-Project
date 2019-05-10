@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  *  SIGN IN PAGE
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView status;
     private Button login;
     private Button signup;
+    private int count = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +53,29 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     //validates the user credentials in the database
     private void validation(String user, String pass)
     {
-        //TODO: DATABASE CONNECTIVITY CODE
+        if((user.equals("admin")) && (pass.equals("admin"))) {
+            Toast.makeText(MainActivity.this,
+                    "Login is Successful!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
+            startActivity(intent);
+        }
+
+        else{
+            count--;
+            Toast.makeText(MainActivity.this,
+                    "Username or Password is Incorrect", Toast.LENGTH_SHORT).show();
+            status.setText("Incorrect Attempts: " + String.valueOf(count));
+
+            if(count == 0)
+            {
+                login.setEnabled(false);
+                System.exit(0);
+            }
+        }
     }
 }

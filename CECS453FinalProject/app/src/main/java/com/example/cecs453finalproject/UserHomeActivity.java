@@ -10,8 +10,8 @@ import android.os.Bundle;
  *  - Quiz tab w/ play button
  *  - History tab
  */
-public class UserHomeActivity extends AppCompatActivity {
 
+public class UserHomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
