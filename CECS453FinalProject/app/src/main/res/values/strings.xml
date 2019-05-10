@@ -15,4 +15,8 @@
     <string name="settings">settings</string>
     <string name="about_us">about us</string>
     <string name="edit">edit</string>
+    <string name="save">Save</string>
+    <string name="retype_password">Retype Password</string>
+    <string name="email">Email</string>
+    <string name="edit_account">Edit Account</string>
 </resources>
