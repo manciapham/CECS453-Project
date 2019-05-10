@@ -1,10 +1,7 @@
 package com.example.cecs453finalproject;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.AsyncTask;
-import android.os.NetworkOnMainThreadException;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,9 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-
-
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,20 +41,23 @@ public class MainActivity extends AppCompatActivity {
     private EditText password;
     private Button login;
     private Button signup;
+<<<<<<< HEAD
+=======
+
+    private Button testButton;
+
+>>>>>>> fe6db587fb3dd7fe237cf657263907f3402de6d8
     boolean check = false;
     private static final String TAG = "MainActivity";
     ArrayList<String> uN = new ArrayList<>();
     ArrayList<String> uP = new ArrayList<>();
 
-
     private int count = 3;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         //reading user credentials from the text fields
 
@@ -71,7 +68,17 @@ public class MainActivity extends AppCompatActivity {
         login = findViewById(R.id.b_login);
         signup = findViewById(R.id.b_signup);
 
+        testButton = (Button) findViewById(R.id.b_test);
+
         downloadJSON("https://nisalgamage.com/userNpass");
+
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddQuestionActivity.class);
+                startActivity(intent);
+            }
+        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void downloadJSON(final String urlWebService) {
         class DownloadJSON extends AsyncTask<Void, Void, String> {
@@ -117,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 return null;
-
             }
 
             protected void onPreExecute() {
@@ -129,24 +134,29 @@ public class MainActivity extends AppCompatActivity {
         getJSON.execute();
     }
 
-
     private void validation(final String user, final String pass) {
+<<<<<<< HEAD
 
          check = false;
+=======
+        boolean check = false;
+>>>>>>> fe6db587fb3dd7fe237cf657263907f3402de6d8
         for (int i = 0; i < uN.size(); i++) {
-            System.out.println("username" + uN.get(i));
-            System.out.println("password" + uP.get(i));
+            System.out.println("Username" + uN.get(i));
+            System.out.println("Password" + uP.get(i));
             if ((uN.get(i).equals(user)) && (uP.get(i).equals(pass))) {
                 check = true;
             }
         }
+
         if (check == true) {
             Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
             startActivity(intent);
+            Toast.makeText(MainActivity.this,
+                    "WELCOME QUIZTAKER!", Toast.LENGTH_SHORT).show();
         } else {
-            //Toast.makeText(getString(R.string.incorrect));
+            Toast.makeText(MainActivity.this,
+                    "INCORRECT USERNAME OR PASSWORD", Toast.LENGTH_SHORT).show();
         }
-
-
     }
 }
