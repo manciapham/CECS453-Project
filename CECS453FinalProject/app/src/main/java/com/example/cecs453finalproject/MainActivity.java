@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+<<<<<<< HEAD
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,6 +35,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+=======
+>>>>>>> f3b6a7b6d263b6d50a3ef2ede5f9f5a5ed6a43fd
 
 /**
  *  SIGN IN PAGE
@@ -50,21 +53,31 @@ public class MainActivity extends AppCompatActivity {
     private TextView status;
     private Button login;
     private Button signup;
+<<<<<<< HEAD
     boolean check=false;
     int index;
     private static final String TAG = "MainActivity";
     ArrayList<String> uN = new ArrayList<>();
     ArrayList<String> uP = new ArrayList<>();
 
+=======
+    private int count = 3;
+>>>>>>> f3b6a7b6d263b6d50a3ef2ede5f9f5a5ed6a43fd
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+<<<<<<< HEAD
 
+=======
+        //reading user credentials from the text fields
+>>>>>>> f3b6a7b6d263b6d50a3ef2ede5f9f5a5ed6a43fd
         username = (EditText)findViewById(R.id.et_username);
         password = (EditText)findViewById(R.id.et_password);
+
+        //buttons link to an action
         login = (Button)findViewById(R.id.b_login);
         signup = (Button)findViewById(R.id.b_signup);
 
@@ -85,9 +98,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
+<<<<<<< HEAD
     private void downloadJSON(final String urlWebService){
         class DownloadJSON extends AsyncTask<Void,Void,String>{
             @Override
@@ -144,6 +157,30 @@ if (check==true){
 }else{
     //Toast.makeText(getString(R.string.incorrect));
 }
+=======
+    //validates the user credentials in the database
+    private void validation(String user, String pass)
+    {
+        if((user.equals("admin")) && (pass.equals("admin"))) {
+            Toast.makeText(MainActivity.this,
+                    "Login is Successful!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
+            startActivity(intent);
+        }
+
+        else{
+            count--;
+            Toast.makeText(MainActivity.this,
+                    "Username or Password is Incorrect", Toast.LENGTH_SHORT).show();
+            status.setText("Incorrect Attempts: " + String.valueOf(count));
+
+            if(count == 0)
+            {
+                login.setEnabled(false);
+                System.exit(0);
+            }
+        }
+>>>>>>> f3b6a7b6d263b6d50a3ef2ede5f9f5a5ed6a43fd
     }
 
 }

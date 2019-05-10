@@ -60,7 +60,8 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void validation(String user, String pass, String rePass,
-                            String mail){
-
+                            String mail)
+    {
+            //TODO: INSERT DATABASE CONNECTIVITY CODE HERE
     }
 }
