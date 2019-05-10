@@ -45,12 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText username;
     private EditText password;
-    private TextView status;
     private Button login;
     private Button signup;
-
     boolean check = false;
-    int index;
     private static final String TAG = "MainActivity";
     ArrayList<String> uN = new ArrayList<>();
     ArrayList<String> uP = new ArrayList<>();
@@ -67,12 +64,12 @@ public class MainActivity extends AppCompatActivity {
 
         //reading user credentials from the text fields
 
-        username = (EditText) findViewById(R.id.et_username);
-        password = (EditText) findViewById(R.id.et_password);
+        username = findViewById(R.id.et_username);
+        password = findViewById(R.id.et_password);
 
         //buttons link to an action
-        login = (Button) findViewById(R.id.b_login);
-        signup = (Button) findViewById(R.id.b_signup);
+        login = findViewById(R.id.b_login);
+        signup = findViewById(R.id.b_signup);
 
         downloadJSON("https://nisalgamage.com/userNpass");
 
@@ -134,8 +131,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void validation(final String user, final String pass) {
-        //TODO: DATABASE CONNECTIVITY CODE
-        boolean check = false;
+
+         check = false;
         for (int i = 0; i < uN.size(); i++) {
             System.out.println("username" + uN.get(i));
             System.out.println("password" + uP.get(i));
