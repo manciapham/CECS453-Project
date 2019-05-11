@@ -14,9 +14,9 @@
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="stateHidden">
         <activity android:name=".QuizActivity"></activity>
+        <activity android:name=".AddQuestionActivity"></activity>
         <activity android:name=".ChangeCredentialActivity" />
         <activity android:name=".AdminHomeActivity" />
-        <activity android:name=".AddQuestionActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".UserHomeActivity" />
         <activity android:name=".SignupActivity" />

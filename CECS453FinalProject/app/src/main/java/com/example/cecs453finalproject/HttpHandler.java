@@ -1,8 +1,6 @@
 package com.example.cecs453finalproject;
 
-
 import android.util.Log;
-
         import java.io.BufferedInputStream;
         import java.io.BufferedReader;
         import java.io.IOException;

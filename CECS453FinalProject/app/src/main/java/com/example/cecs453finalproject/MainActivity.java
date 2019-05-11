@@ -1,10 +1,7 @@
 package com.example.cecs453finalproject;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.AsyncTask;
-import android.os.NetworkOnMainThreadException;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,19 +39,20 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText username;
     private EditText password;
-    private TextView status;
     private Button login;
     private Button signup;
+<<<<<<< HEAD
+=======
 
+    private Button testButton;
+
+>>>>>>> fe6db587fb3dd7fe237cf657263907f3402de6d8
     boolean check = false;
-    int index;
     private static final String TAG = "MainActivity";
     ArrayList<String> uN = new ArrayList<>();
     ArrayList<String> uP = new ArrayList<>();
 
-
     private int count = 3;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,14 +61,24 @@ public class MainActivity extends AppCompatActivity {
 
         //reading user credentials from the text fields
 
-        username = (EditText) findViewById(R.id.et_username);
-        password = (EditText) findViewById(R.id.et_password);
+        username = findViewById(R.id.et_username);
+        password = findViewById(R.id.et_password);
 
         //buttons link to an action
-        login = (Button) findViewById(R.id.b_login);
-        signup = (Button) findViewById(R.id.b_signup);
+        login = findViewById(R.id.b_login);
+        signup = findViewById(R.id.b_signup);
+
+        testButton = (Button) findViewById(R.id.b_test);
 
         downloadJSON("https://nisalgamage.com/userNpass");
+
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddQuestionActivity.class);
+                startActivity(intent);
+            }
+        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void downloadJSON(final String urlWebService) {
         class DownloadJSON extends AsyncTask<Void, Void, String> {
@@ -128,8 +135,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void validation(final String user, final String pass) {
-        //TODO: DATABASE CONNECTIVITY CODE
+<<<<<<< HEAD
+
+         check = false;
+=======
         boolean check = false;
+>>>>>>> fe6db587fb3dd7fe237cf657263907f3402de6d8
         for (int i = 0; i < uN.size(); i++) {
             System.out.println("Username" + uN.get(i));
             System.out.println("Password" + uP.get(i));
@@ -137,12 +148,15 @@ public class MainActivity extends AppCompatActivity {
                 check = true;
             }
         }
+
         if (check == true) {
             Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
             startActivity(intent);
+            Toast.makeText(MainActivity.this,
+                    "WELCOME QUIZTAKER!", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(MainActivity.this,
-                    "Username or Password is Incorrect", Toast.LENGTH_SHORT).show();
+                    "INCORRECT USERNAME OR PASSWORD", Toast.LENGTH_SHORT).show();
         }
     }
 }
