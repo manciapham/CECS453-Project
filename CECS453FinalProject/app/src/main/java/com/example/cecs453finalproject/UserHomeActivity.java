@@ -11,7 +11,10 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Intent;
+
 import android.view.View;
+import android.widget.Toast;
 
 /**
  *  User Homepage
@@ -77,12 +80,18 @@ public class UserHomeActivity extends AppCompatActivity implements NavigationVie
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_account) {
+        if (id == R.id.nav_account){
             //TODO:
+
         } else if (id == R.id.nav_about) {
-            //TODO:
+            Intent i = new Intent(UserHomeActivity.this, AboutFragment.class);
+            startActivity(i);
+
         } else if (id == R.id.nav_logout) {
-            //TODO:
+            Intent intent = new Intent(UserHomeActivity.this, MainActivity.class);
+            startActivity(intent);
+            Toast.makeText(UserHomeActivity.this,
+                    "LOGOUT SUCCESSFUL! SEE YA AGAIN!", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
