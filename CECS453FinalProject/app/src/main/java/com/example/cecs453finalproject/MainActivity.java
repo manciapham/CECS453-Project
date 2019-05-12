@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AddQuestionActivity.class);
+                Intent intent = new Intent(MainActivity.this, AdminHomeActivity.class);
                 startActivity(intent);
             }
         });
