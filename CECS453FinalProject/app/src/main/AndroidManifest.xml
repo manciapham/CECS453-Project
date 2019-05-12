@@ -13,8 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="stateHidden">
-        <activity android:name=".QuizActivity"></activity>
-        <activity android:name=".AddQuestionActivity"></activity>
+        <activity android:name=".ListQuestion"></activity>
+        <activity android:name=".QuizActivity" />
+        <activity android:name=".AddQuestionActivity" />
         <activity android:name=".ChangeCredentialActivity" />
         <activity android:name=".AdminHomeActivity" />
         <activity android:name=".MainActivity" />
