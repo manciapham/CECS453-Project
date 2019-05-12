@@ -74,18 +74,18 @@ public class UserHomeActivity extends AppCompatActivity implements NavigationVie
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_account){
-            //TODO:
+            Intent intent = new Intent(UserHomeActivity.this, AccountActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_about) {
-            Intent i = new Intent(UserHomeActivity.this, AboutFragment.class);
-            startActivity(i);
+            Intent intent = new Intent(UserHomeActivity.this, AboutFragment.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_logout) {
             Intent intent = new Intent(UserHomeActivity.this, MainActivity.class);

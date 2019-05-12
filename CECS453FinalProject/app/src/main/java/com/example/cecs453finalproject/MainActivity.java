@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private Button signup;
 
     private Button testButton;
+    private Button testUserButton;
 
     boolean check = false;
     private static final String TAG = "MainActivity";
@@ -57,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //reading user credentials from the text fields
-
         username = findViewById(R.id.et_username);
         password = findViewById(R.id.et_password);
 
@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         signup = findViewById(R.id.b_signup);
 
         testButton = (Button) findViewById(R.id.b_test);
+        testUserButton = (Button) findViewById(R.id.b_testUser);
 
         downloadJSON("https://nisalgamage.com/userNpass");
 
@@ -77,11 +78,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        testUserButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 validation(username.getText().toString(), password.getText().toString());
+                Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+                intent.putExtra ( "Username", username.getText().toString() );
+                startActivity(intent);
             }
         });
 
@@ -153,4 +164,6 @@ public class MainActivity extends AppCompatActivity {
                     "INCORRECT USERNAME OR PASSWORD", Toast.LENGTH_SHORT).show();
         }
     }
+
+
 }
