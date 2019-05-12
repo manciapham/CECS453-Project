@@ -41,12 +41,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText password;
     private Button login;
     private Button signup;
-<<<<<<< HEAD
-=======
 
     private Button testButton;
 
->>>>>>> fe6db587fb3dd7fe237cf657263907f3402de6d8
     boolean check = false;
     private static final String TAG = "MainActivity";
     ArrayList<String> uN = new ArrayList<>();
@@ -135,12 +132,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void validation(final String user, final String pass) {
-<<<<<<< HEAD
-
-         check = false;
-=======
+        check = false;
         boolean check = false;
->>>>>>> fe6db587fb3dd7fe237cf657263907f3402de6d8
+
         for (int i = 0; i < uN.size(); i++) {
             System.out.println("Username" + uN.get(i));
             System.out.println("Password" + uP.get(i));

@@ -46,10 +46,6 @@ public class SignupActivity extends AppCompatActivity {
     String UN = "";
     String UP = "";
 
-
-
-    //TODO: ADD CODE FOR DATABASE CONNECTIVITY
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,8 +65,6 @@ public class SignupActivity extends AppCompatActivity {
                 UP = password.getText().toString();
                 System.out.println(UN+UP);
                 downloadJSON("https://nisalgamage.com/registerUser");
-                validation(username.getText().toString(), password.getText().toString(),
-                        confirmPass.getText().toString(), email.getText().toString());
             }
 
         });
@@ -83,14 +77,7 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void validation(String user, String pass, String rePass,
-                            String mail)
-    {
-            //TODO: INSERT DATABASE CONNECTIVITY CODE HERE
-
-
-    }
+    
     private void downloadJSON(final String urlWebService) {
 
         class DownloadJSON extends AsyncTask<Void, Void, String> {
