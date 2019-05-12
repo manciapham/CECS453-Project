@@ -77,7 +77,7 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
     }
-    
+
     private void downloadJSON(final String urlWebService) {
 
         class DownloadJSON extends AsyncTask<Void, Void, String> {
@@ -145,5 +145,6 @@ public class SignupActivity extends AppCompatActivity {
         DownloadJSON getJSON = new DownloadJSON();
         getJSON.execute();
     }
+
 
 }
