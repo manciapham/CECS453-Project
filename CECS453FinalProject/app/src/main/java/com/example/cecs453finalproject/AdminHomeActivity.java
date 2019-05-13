@@ -38,7 +38,7 @@ public class AdminHomeActivity extends AppCompatActivity {
         questionList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminHomeActivity.this, QuizActivity.class);
+                Intent intent = new Intent(AdminHomeActivity.this, ListQuestion.class);
                 startActivity(intent);
             }
         });
