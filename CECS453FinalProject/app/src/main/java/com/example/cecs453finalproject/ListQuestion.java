@@ -40,15 +40,19 @@ public class ListQuestion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         downloadJSON("https://nisalgamage.com/qNa");
         setContentView(R.layout.activity_list_question);
-
-
+        populateListView();
 
     }
 
     public void populateListView(){
-        //TODO: add questions from database here
 
         listViewQuestions = (ListView) findViewById(R.id.listViewQuestions);
+
+        //TODO: add questions from database here. replace strings with string data from the database
+        questions.add(new Question("What is your name?","Matt"));
+        questions.add(new Question("What is your name?","Matt"));
+        questions.add(new Question("What is your name?","Matt"));
+        questions.add(new Question("What is your name?","Matt"));
 
         adapter = new QuestionAdapter(this, questions);
         listViewQuestions.setAdapter(adapter);
