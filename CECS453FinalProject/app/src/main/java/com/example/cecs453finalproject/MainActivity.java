@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,
                         "WELCOME ADMIN!", Toast.LENGTH_SHORT).show();
             }
-            
+
             else
             {
                 Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
