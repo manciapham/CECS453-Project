@@ -22,7 +22,7 @@ public class AccountActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_account);
 
         username = (TextView)findViewById(R.id.userText);
         email = (TextView)findViewById(R.id.userEmail);
@@ -32,8 +32,8 @@ public class AccountActivity extends AppCompatActivity{
         userValue = getIntent().getExtras().getString("Username");
         emailValue = getIntent().getExtras().getString("Email");
 
-        username.setText("USERNAME: : " + userValue);
-        email.setText("EMAIL: : " + emailValue);
+        username.setText("USERNAME: " + userValue);
+        email.setText("EMAIL: " + emailValue);
 
         edit.setOnClickListener(new View.OnClickListener() {
             @Override

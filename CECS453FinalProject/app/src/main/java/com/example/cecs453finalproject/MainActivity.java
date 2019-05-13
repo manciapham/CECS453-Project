@@ -164,6 +164,4 @@ public class MainActivity extends AppCompatActivity {
                     "INCORRECT USERNAME OR PASSWORD", Toast.LENGTH_SHORT).show();
         }
     }
-
-
 }
