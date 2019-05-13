@@ -40,7 +40,7 @@ public class ListQuestion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         downloadJSON("https://nisalgamage.com/qNa");
         setContentView(R.layout.activity_list_question);
-        populateListView();
+
 
     }
 
@@ -49,10 +49,15 @@ public class ListQuestion extends AppCompatActivity {
         listViewQuestions = (ListView) findViewById(R.id.listViewQuestions);
 
         //TODO: add questions from database here. replace strings with string data from the database
-        questions.add(new Question("What is your name?","Matt"));
-        questions.add(new Question("What is your name?","Matt"));
-        questions.add(new Question("What is your name?","Matt"));
-        questions.add(new Question("What is your name?","Matt"));
+      //  questions.add(new Question("What is your name?","Matt"));
+      //  questions.add(new Question("What is your name?","Matt"));
+      //  questions.add(new Question("What is your name?","Matt"));
+      //  questions.add(new Question("What is your name?","Matt"));
+        System.out.println("i came here");
+        for (int i=0; i<questionID.size();i++){
+            questions.add(new Question(answers.get(i),questionz.get(i)));
+
+        }
 
         adapter = new QuestionAdapter(this, questions);
         listViewQuestions.setAdapter(adapter);
@@ -96,6 +101,12 @@ public class ListQuestion extends AppCompatActivity {
 
             protected void onPreExecute() {
                 super.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                populateListView();
             }
         }
 
