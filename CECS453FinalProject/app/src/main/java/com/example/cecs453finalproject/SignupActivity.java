@@ -144,10 +144,7 @@ public class SignupActivity extends AppCompatActivity {
                 super.onPreExecute();
             }
         }
-
         DownloadJSON getJSON = new DownloadJSON();
         getJSON.execute();
     }
-
-
 }

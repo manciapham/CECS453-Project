@@ -50,8 +50,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> uN = new ArrayList<>();
     ArrayList<String> uP = new ArrayList<>();
 
-    private int count = 3;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -155,15 +153,25 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (check == true) {
-            Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
-            startActivity(intent);
-            Toast.makeText(MainActivity.this,
-                    "WELCOME QUIZTAKER!", Toast.LENGTH_SHORT).show();
+            if((user.equals("Admin")) && (pass.equals("Admin")))
+            {
+                Intent intent = new Intent(MainActivity.this, AdminHomeActivity.class);
+                startActivity(intent);
+                Toast.makeText(MainActivity.this,
+                        "WELCOME ADMIN!", Toast.LENGTH_SHORT).show();
+            }
+
+            else
+            {
+                Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
+                startActivity(intent);
+                Toast.makeText(MainActivity.this,
+                        "WELCOME QUIZTAKER!", Toast.LENGTH_SHORT).show();
+            }
+
         } else {
             Toast.makeText(MainActivity.this,
                     "INCORRECT USERNAME OR PASSWORD", Toast.LENGTH_SHORT).show();
         }
     }
-
-
 }
