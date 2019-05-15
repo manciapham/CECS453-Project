@@ -161,17 +161,12 @@ public class MainActivity extends AppCompatActivity {
                         "WELCOME ADMIN!", Toast.LENGTH_SHORT).show();
             }
 
-            else if((user.equals(uN)) && (pass.equals(uP)))
+            else
             {
                 Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
                 startActivity(intent);
                 Toast.makeText(MainActivity.this,
                         "WELCOME QUIZTAKER!", Toast.LENGTH_SHORT).show();
-            }
-
-            else{
-                Toast.makeText(MainActivity.this,
-                        "INCORRECT USERNAME OR PASSWORD", Toast.LENGTH_SHORT).show();
             }
 
         } else {
