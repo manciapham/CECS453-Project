@@ -66,8 +66,6 @@ public class SignupActivity extends AppCompatActivity {
                 System.out.println(UN+UP);
                 downloadJSON("https://nisalgamage.com/registerUser");
                 Intent intent = new Intent(SignupActivity.this, AccountActivity.class);
-                intent.putExtra ( "Email", email.getText().toString() );
-                startActivity(intent);
             }
 
         });

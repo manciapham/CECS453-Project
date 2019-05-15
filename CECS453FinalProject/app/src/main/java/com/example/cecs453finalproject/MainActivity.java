@@ -88,9 +88,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validation(username.getText().toString(), password.getText().toString());
-//                Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
-//                intent.putExtra ( "Username", username.getText().toString() );
-//                startActivity(intent);
+                Intent intent = new Intent();
+                intent.putExtra ( "Username", username.getText().toString() );
+                intent.putExtra ( "Password", password.getText().toString() );
             }
         });
 
@@ -156,6 +156,8 @@ public class MainActivity extends AppCompatActivity {
             if((user.equals("Admin")) && (pass.equals("Admin")))
             {
                 Intent intent = new Intent(MainActivity.this, AdminHomeActivity.class);
+//                intent.putExtra ( "Username", username.getText().toString() );
+//                intent.putExtra ( "Password", password.getText().toString() );
                 startActivity(intent);
                 Toast.makeText(MainActivity.this,
                         "WELCOME ADMIN!", Toast.LENGTH_SHORT).show();
@@ -164,6 +166,8 @@ public class MainActivity extends AppCompatActivity {
             else
             {
                 Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
+//                intent.putExtra ( "Username", username.getText().toString() );
+//                intent.putExtra ( "Password", password.getText().toString() );
                 startActivity(intent);
                 Toast.makeText(MainActivity.this,
                         "WELCOME QUIZTAKER!", Toast.LENGTH_SHORT).show();
