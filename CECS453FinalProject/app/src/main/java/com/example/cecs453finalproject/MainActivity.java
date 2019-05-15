@@ -88,9 +88,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validation(username.getText().toString(), password.getText().toString());
-                Intent intent = new Intent(MainActivity.this, AccountActivity.class);
-                intent.putExtra ( "Username", username.getText().toString() );
-                startActivity(intent);
+//                Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
+//                intent.putExtra ( "Username", username.getText().toString() );
+//                startActivity(intent);
             }
         });
 
@@ -161,12 +161,17 @@ public class MainActivity extends AppCompatActivity {
                         "WELCOME ADMIN!", Toast.LENGTH_SHORT).show();
             }
 
-            else
+            else if((user.equals(uN)) && (pass.equals(uP)))
             {
                 Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
                 startActivity(intent);
                 Toast.makeText(MainActivity.this,
                         "WELCOME QUIZTAKER!", Toast.LENGTH_SHORT).show();
+            }
+
+            else{
+                Toast.makeText(MainActivity.this,
+                        "INCORRECT USERNAME OR PASSWORD", Toast.LENGTH_SHORT).show();
             }
 
         } else {
