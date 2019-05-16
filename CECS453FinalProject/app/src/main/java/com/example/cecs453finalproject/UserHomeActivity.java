@@ -43,8 +43,8 @@ public class UserHomeActivity extends AppCompatActivity implements NavigationVie
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        userValue = getIntent().getStringExtra("Username");
-        passValue = getIntent().getStringExtra("Password");
+//        userValue = getIntent().getStringExtra("Username");
+//        passValue = getIntent().getStringExtra("Password");
 
     }
 
