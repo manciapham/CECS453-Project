@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //reading user credentials from the text fields
-        username = findViewById(R.id.et_username);
-        password = findViewById(R.id.et_password);
+        username = (EditText) findViewById(R.id.et_username);
+        password = (EditText) findViewById(R.id.et_password);
 
         //buttons link to an action
         login = findViewById(R.id.b_login);
@@ -153,8 +153,8 @@ public class MainActivity extends AppCompatActivity {
             if((user.equals("Admin")) && (pass.equals("Admin")))
             {
                 Intent intent = new Intent(MainActivity.this, AdminHomeActivity.class);
-//                intent.putExtra ( "Username", username.getText().toString() );
-//                intent.putExtra ( "Password", password.getText().toString() );
+                intent.putExtra ( "Username", username.getText().toString());
+                intent.putExtra ( "Password", password.getText().toString());
                 startActivity(intent);
                 Toast.makeText(MainActivity.this,
                         "WELCOME ADMIN!", Toast.LENGTH_SHORT).show();
@@ -162,9 +162,9 @@ public class MainActivity extends AppCompatActivity {
 
             else
             {
-                Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
-//                intent.putExtra ( "Username", username.getText().toString() );
-//                intent.putExtra ( "Password", password.getText().toString() );
+                Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+                intent.putExtra ( "Username", username.getText().toString());
+                intent.putExtra ( "Password", password.getText().toString());
                 startActivity(intent);
                 Toast.makeText(MainActivity.this,
                         "WELCOME QUIZTAKER!", Toast.LENGTH_SHORT).show();

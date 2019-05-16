@@ -25,6 +25,9 @@ import android.widget.Toast;
 
 public class UserHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
+    String userValue;
+    String passValue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,10 @@ public class UserHomeActivity extends AppCompatActivity implements NavigationVie
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        userValue = getIntent().getStringExtra("Username");
+        passValue = getIntent().getStringExtra("Password");
+
     }
 
     @Override
@@ -73,6 +80,7 @@ public class UserHomeActivity extends AppCompatActivity implements NavigationVie
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -84,6 +92,8 @@ public class UserHomeActivity extends AppCompatActivity implements NavigationVie
 
         } else if (id == R.id.nav_about) {
             Intent intent = new Intent(UserHomeActivity.this, AboutActivity.class);
+            intent.putExtra ( "Username", userValue);
+            intent.putExtra ( "Password", passValue);
             startActivity(intent);
 
         } else if (id == R.id.nav_logout) {
