@@ -10,6 +10,7 @@ public class AboutActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
+        //calls the aboutfragment class which displays the fragment that is a part of the activity about xml
         AboutFragment about = new AboutFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.container, about).commit();
 
