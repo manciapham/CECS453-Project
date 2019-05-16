@@ -88,9 +88,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validation(username.getText().toString(), password.getText().toString());
-                Intent intent = new Intent();
-                intent.putExtra ( "Username", username.getText().toString() );
-                intent.putExtra ( "Password", password.getText().toString() );
             }
         });
 
