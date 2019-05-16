@@ -27,8 +27,8 @@ public class AccountActivity extends AppCompatActivity{
         edit = (Button)findViewById(R.id.b_edit_account);
         back = (Button)findViewById(R.id.b_back_to_home);
 
-        userValue = getIntent().getStringExtra("Username");
-        passValue = getIntent().getStringExtra("Password");
+        userValue = getIntent().getStringExtra("New Username");
+        passValue = getIntent().getStringExtra("New Password");
 
         username.setText("USERNAME: " + userValue);
         password.setText("PASSWORD: " + passValue);

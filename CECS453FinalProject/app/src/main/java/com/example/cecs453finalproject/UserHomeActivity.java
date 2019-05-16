@@ -25,8 +25,8 @@ import android.widget.Toast;
 
 public class UserHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-    String userValue;
-    String passValue;
+    String newUser;
+    String newPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +43,8 @@ public class UserHomeActivity extends AppCompatActivity implements NavigationVie
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-//        userValue = getIntent().getStringExtra("Username");
-//        passValue = getIntent().getStringExtra("Password");
+        newUser = getIntent().getStringExtra("Username");
+        newPass = getIntent().getStringExtra("Password");
 
     }
 
@@ -88,12 +88,12 @@ public class UserHomeActivity extends AppCompatActivity implements NavigationVie
 
         if (id == R.id.nav_account){
             Intent intent = new Intent(UserHomeActivity.this, AccountActivity.class);
+            intent.putExtra ( "New Username", newUser);
+            intent.putExtra ( "New Password", newPass);
             startActivity(intent);
 
         } else if (id == R.id.nav_about) {
             Intent intent = new Intent(UserHomeActivity.this, AboutActivity.class);
-            intent.putExtra ( "Username", userValue);
-            intent.putExtra ( "Password", passValue);
             startActivity(intent);
 
         } else if (id == R.id.nav_logout) {
