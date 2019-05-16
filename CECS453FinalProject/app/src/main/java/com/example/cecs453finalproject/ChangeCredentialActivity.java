@@ -25,7 +25,6 @@ public class ChangeCredentialActivity extends AppCompatActivity {
         changeUser = (EditText)findViewById(R.id.et_change_user);
         changePass = (EditText)findViewById(R.id.et_change_pass);
         confirmPass = (EditText)findViewById(R.id.et_change_repass);
-        changeEmail = (EditText)findViewById(R.id.et_change_email);
 
         //buttons link to an action
         save = (Button)findViewById(R.id.btn_change_save);
