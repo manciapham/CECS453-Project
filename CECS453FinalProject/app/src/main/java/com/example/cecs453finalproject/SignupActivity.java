@@ -51,6 +51,7 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        //getting data from fields on the signup xml file
         username = (EditText)findViewById(R.id.et_new_username);
         password = (EditText)findViewById(R.id.et_new_password);
         confirmPass = (EditText)findViewById(R.id.et_new_repassword);
@@ -58,6 +59,8 @@ public class SignupActivity extends AppCompatActivity {
         submit = (Button)findViewById(R.id.b_signup_submit);
         cancel = (Button)findViewById(R.id.b_signup_cancel);
 
+        //once submit button is clicked, credentials gets inserted to the user table on the database and once finished
+        //user gets directed to the login page
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +73,7 @@ public class SignupActivity extends AppCompatActivity {
 
         });
 
+        //if cancel is clicked, user gets directed to the login page
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

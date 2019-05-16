@@ -11,6 +11,7 @@ public class AboutFragment extends Fragment
 {
     private TextView aboutView;
 
+    //displays the about fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 

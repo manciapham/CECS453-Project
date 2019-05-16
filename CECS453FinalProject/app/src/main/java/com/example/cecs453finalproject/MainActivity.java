@@ -60,13 +60,13 @@ public class MainActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.et_password);
 
         //buttons link to an action
-        login = findViewById(R.id.b_login);
-        signup = findViewById(R.id.b_signup);
+        login = (Button) findViewById(R.id.b_login);
+        signup = (Button) findViewById(R.id.b_signup);
 
         testButton = (Button) findViewById(R.id.b_test);
         testUserButton = (Button) findViewById(R.id.b_testUser);
 
-        downloadJSON("https://nisalgamage.com/userNpass");
+        downloadJSON("https://nisalgamage.com/userNpass"); //database connectivity
 
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //once the login button is clicked, validation method is called to validate credentials
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //once the signup button is clicked, user gets directed to the signup page
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -149,12 +151,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        //if credentials are valid and found in the database
         if (check == true) {
+            //username and password of admin gets directed to the admin homepage
             if((user.equals("Admin")) && (pass.equals("Admin")))
             {
                 Intent intent = new Intent(MainActivity.this, AdminHomeActivity.class);
-                intent.putExtra ( "Username", username.getText().toString());
-                intent.putExtra ( "Password", password.getText().toString());
+                intent.putExtra ( "Username", username.getText().toString()); //pass the data from the username editText to another activity
+                intent.putExtra ( "Password", password.getText().toString()); //pass the data from the password editText to another activity
                 startActivity(intent);
                 Toast.makeText(MainActivity.this,
                         "WELCOME ADMIN!", Toast.LENGTH_SHORT).show();
@@ -162,9 +166,10 @@ public class MainActivity extends AppCompatActivity {
 
             else
             {
+                //username and password found in the user table on the database gets directed to home
                 Intent intent = new Intent(MainActivity.this, UserHomeActivity.class);
-                intent.putExtra ( "Username", username.getText().toString());
-                intent.putExtra ( "Password", password.getText().toString());
+                intent.putExtra ( "Username", username.getText().toString()); //pass the data from the username editText to another activity
+                intent.putExtra ( "Password", password.getText().toString()); //pass the data from the password editText to another activity
                 startActivity(intent);
                 Toast.makeText(MainActivity.this,
                         "WELCOME QUIZTAKER!", Toast.LENGTH_SHORT).show();

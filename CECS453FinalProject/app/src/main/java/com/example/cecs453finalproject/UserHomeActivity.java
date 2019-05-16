@@ -43,8 +43,8 @@ public class UserHomeActivity extends AppCompatActivity implements NavigationVie
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        newUser = getIntent().getStringExtra("Username");
-        newPass = getIntent().getStringExtra("Password");
+        newUser = getIntent().getStringExtra("Username"); //accepts the username data from mainactivity
+        newPass = getIntent().getStringExtra("Password"); //accepts the password data from mainactivity
 
     }
 
@@ -86,16 +86,19 @@ public class UserHomeActivity extends AppCompatActivity implements NavigationVie
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        //directs user to the account page
         if (id == R.id.nav_account){
             Intent intent = new Intent(UserHomeActivity.this, AccountActivity.class);
-            intent.putExtra ( "New Username", newUser);
-            intent.putExtra ( "New Password", newPass);
+            intent.putExtra ( "New Username", newUser); //pass the accepted username data from mainactivity to the account page
+            intent.putExtra ( "New Password", newPass); //pass the accepted password data from mainactivity to the account page
             startActivity(intent);
 
+        //directs the user to the about page
         } else if (id == R.id.nav_about) {
             Intent intent = new Intent(UserHomeActivity.this, AboutActivity.class);
             startActivity(intent);
 
+        //once clicked, the user is signed out and gets directed to the login page
         } else if (id == R.id.nav_logout) {
             Intent intent = new Intent(UserHomeActivity.this, MainActivity.class);
             startActivity(intent);

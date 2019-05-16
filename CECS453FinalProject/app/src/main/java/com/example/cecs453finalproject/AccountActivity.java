@@ -22,17 +22,21 @@ public class AccountActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
+        //getting data from fields on the activity account xml
         username = (TextView)findViewById(R.id.userText);
         password = (TextView)findViewById(R.id.userPass);
         edit = (Button)findViewById(R.id.b_edit_account);
         back = (Button)findViewById(R.id.b_back_to_home);
 
+        //accepts the data passed from userHomeActivity
         userValue = getIntent().getStringExtra("New Username");
         passValue = getIntent().getStringExtra("New Password");
 
+        //set the textviews from the xml file to the passed data
         username.setText("USERNAME: " + userValue);
         password.setText("PASSWORD: " + passValue);
 
+        //once clicked, user gets directed to the signup page to create a new account
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,6 +45,7 @@ public class AccountActivity extends AppCompatActivity{
             }
         });
 
+        //once clicked user gets directed to the home page
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
