@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.content.Intent;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 /**
@@ -25,12 +26,24 @@ import android.widget.Toast;
 
 public class UserHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
+    private Button play;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_drawer);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        play = findViewById(R.id.buttonPlay);
+
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserHomeActivity.this, QuizActivity.class);
+                startActivity(intent);
+            }
+        });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);

@@ -76,7 +76,7 @@ public class QuizActivity extends AppCompatActivity {
         question7.setText("8. " + uQ.get(order.get(7)));
         question8.setText("9. " + uQ.get(order.get(8)));
         question9.setText("10. " + uQ.get(order.get(9)));
-        
+
         quizSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
