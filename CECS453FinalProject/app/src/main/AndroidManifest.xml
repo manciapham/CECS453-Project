@@ -13,13 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="stateHidden">
-        <activity android:name=".GradeQuizActivity"></activity>
-        <activity android:name=".ListQuestion" />
+        <activity android:name=".ListQuestion"></activity>
         <activity android:name=".QuizActivity" />
         <activity android:name=".AddQuestionActivity" />
         <activity android:name=".ChangeCredentialActivity" />
         <activity android:name=".AdminHomeActivity" />
-        <activity android:name=".AccountActivity" />
+        <activity android:name=".AccountActivity"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".UserHomeActivity" />
         <activity android:name=".SignupActivity" />
