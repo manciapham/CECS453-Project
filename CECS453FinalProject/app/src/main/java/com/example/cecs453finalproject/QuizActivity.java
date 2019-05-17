@@ -1,10 +1,8 @@
 package com.example.cecs453finalproject;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -14,10 +12,6 @@ import android.widget.Toast;
 
 import com.example.cecs453finalproject.Model.Question;
 //import com.example.quizzical.SQL.DatabaseHelper2;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,10 +26,6 @@ public class QuizActivity extends AppCompatActivity {
     private static final String KEY_QUESTION_COUNT = "keyQuestionCount";
     private static final String KEY_ANSWERED = "keyAnswered";
     private static final String KEY_QUESTION_LIST = "keyQuestionList";
-    ArrayList<String> questionID = new ArrayList<>();
-    ArrayList<String> questionz = new ArrayList<>();
-    ArrayList<String> answers = new ArrayList<>();
-    private static final String TAG = "quizact";
 
     private TextView textViewQuestion;
     private TextView textViewQuestionCount;
@@ -58,7 +48,7 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        downloadJSON("https://nisalgamage.com/qNa");
+
         score = 0;
 
         textViewQuestion = findViewById(R.id.text_view_question);
@@ -71,12 +61,10 @@ public class QuizActivity extends AppCompatActivity {
         buttonNext = findViewById(R.id.button_next);
 
         if (savedInstanceState == null) {
-           // DatabaseHelper2 databaseHelper2 = new DatabaseHelper2(this);
-           // questionList = databaseHelper2.getAllQuestion();
-           // questionCountTotal = questionList.size();
-           // questionCountTotal = questionz.size();
-           // questionList = questionz;
-           // Collections.shuffle(questionList);
+            DatabaseHelper2 databaseHelper2 = new DatabaseHelper2(this);
+            questionList = databaseHelper2.getAllQuestion();
+            questionCountTotal = questionList.size();
+            Collections.shuffle(questionList);
 
             showNextQuestion();
         } else {
@@ -110,56 +98,6 @@ public class QuizActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    private void downloadJSON(final String urlWebService) {
-        class DownloadJSON extends AsyncTask<Void, Void, String> {
-            @Override
-            protected String doInBackground(Void... voids) {
-
-                HttpHandler sh = new HttpHandler();
-                String jsonStr = sh.makeServiceCall(urlWebService);
-                Log.e(TAG, "response" + jsonStr);
-                if (jsonStr != null) {
-                    try {
-                        JSONObject jsonObject = new JSONObject(jsonStr);
-                        JSONArray users = jsonObject.getJSONArray("dataQNA");
-
-                        for (int i = 0; i < users.length(); i++) {
-                            JSONObject un = users.getJSONObject(i);
-                            String questID = un.getString("questionID");
-                            String quest = un.getString("question");
-                            String ans = un.getString("answer");
-
-                            questionID.add(questID);
-                            questionz.add(quest);
-                            answers.add(ans);
-
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-                for (int i=0; i<questionID.size();i++){
-                    System.out.println(questionID.get(i));
-                    System.out.println(questionz.get(i));
-                    System.out.println(answers.get(i));
-                }
-                return null;
-            }
-
-            protected void onPreExecute() {
-                super.onPreExecute();
-            }
-
-            @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
-            }
-        }
-
-        DownloadJSON getJSON = new DownloadJSON();
-        getJSON.execute();
     }
 
     private void showNextQuestion() {
